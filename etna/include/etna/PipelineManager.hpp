@@ -25,6 +25,9 @@ public:
   GraphicsPipeline createGraphicsPipeline(
     const char* shader_program_name, GraphicsPipeline::CreateInfo info);
 
+  GraphicsPipeline createGraphicsPipeline(
+    const char* shader_program_name, vk::PipelineLayout layout, GraphicsPipeline::CreateInfo info);
+
   ComputePipeline createComputePipeline(
     const char* shader_program_name, ComputePipeline::CreateInfo info);
 
