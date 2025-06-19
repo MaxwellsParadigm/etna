@@ -274,6 +274,12 @@ static VkBool32 debugCallback(
   const VkDebugUtilsMessengerCallbackDataEXT* callback_data,
   void* /*pUserData*/)
 {
+  if (callback_data->messageIdNumber == 0xeb3f9ac3) {
+        return VK_FALSE;
+  }
+  if (callback_data->messageIdNumber == 0x75116927) {
+    return VK_FALSE;
+  }
   if ((message_severity & VK_DEBUG_UTILS_MESSAGE_SEVERITY_ERROR_BIT_EXT) != 0)
   {
     spdlog::error(callback_data->pMessage);
